@@ -30,6 +30,11 @@ gulp.task("less", function() {
     .pipe(gulp.dest('./public'));
 });
 
+gulp.task("img", function() {
+	gulp.src('./src/img/*')
+		.pipe(gulp.dest('./public/img'));
+});
+
 // gulp.task("css", function() {
 // 	gulp.src("./src/css/**/*.css")
 // 		.pipe(concat("main.css"))
@@ -52,7 +57,7 @@ gulp.task("fonts", function() {
 });
 
 gulp.task("watch", function() {
-	gulp.watch("./src/**/*", ["bower", "concat", "less", "html", "fonts"]);
+	gulp.watch("./src/**/*", ["bower", "concat", "less", "html", "fonts", "img"]);
 });
 
-gulp.task("default", ["bower", "concat", "less", "html", "fonts", "watch"]);
+gulp.task("default", ["bower", "concat", "less", "html", "fonts", "img", "watch"]);
