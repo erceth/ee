@@ -11,7 +11,7 @@
 
 <body>
     <div class="wrapper">
-        <header class="col-xs-12">
+        <header ng-hide="hideHeader" class="col-xs-12">
         	<div class="col-xs-3 logo-container">
         		<a ui-sref="home">
         			<img class="logo" src="img/snake.jpg">
@@ -32,9 +32,10 @@
         <div ng-controller="AppCtrl">
             <div ui-view></div>
         </div>
-        <footer class="footer navbar-fixed-bottom">
-            footer
-            <span>Do you know the Konomi Code?</span>
+        <footer ng-hide="hideFooter" class="footer navbar-fixed-bottom col-xs-12">
+        	<div class="footer-container">
+        		<span ng-show="kc">Do you know the Konami Code?</span>
+        	</div>
         </footer>
     </div>
 

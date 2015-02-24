@@ -28,6 +28,18 @@ gulp.task("less", function() {
     }))
     .pipe(concat("main.css"))
     .pipe(gulp.dest('./public'));
+
+    gulp.src('./src/less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(concat("main.css"))
+    .pipe(gulp.dest('./public'));
+
+    gulp.src("./lib/**/*.css")
+		.pipe(concat("lib.css"))
+		.pipe(gulp.dest("public/"));
+
 });
 
 gulp.task("img", function() {
@@ -56,8 +68,13 @@ gulp.task("fonts", function() {
 		.pipe(gulp.dest("public/fonts/"));
 });
 
-gulp.task("watch", function() {
-	gulp.watch("./src/**/*", ["bower", "concat", "less", "html", "fonts", "img"]);
+gulp.task("jurassic", function() {
+	gulp.src("./src/jurassicsystems/**/*")
+		.pipe(gulp.dest("public/jurassicsystems"));
 });
 
-gulp.task("default", ["bower", "concat", "less", "html", "fonts", "img", "watch"]);
+gulp.task("watch", function() {
+	gulp.watch("./src/**/*", ["bower", "concat", "less", "html", "fonts", "img", "jurassic"]);
+});
+
+gulp.task("default", ["bower", "concat", "less", "html", "fonts", "img", "jurassic", "watch"]);
