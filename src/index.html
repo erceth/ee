@@ -9,9 +9,9 @@
 
 </head>
 
-<body>
+<body ng-controller="AppCtrl">
     <div class="wrapper">
-        <header ng-hide="hideHeader" class="col-xs-12">
+        <header class="col-xs-12" ng-hide="hideFooterHeader()">
         	<div class="col-xs-3 logo-container">
         		<a ui-sref="home">
         			<img class="logo" src="img/snake.jpg">
@@ -29,12 +29,13 @@
             	<h3>Welcome</h3>
             </div>
         </header>
-        <div ng-controller="AppCtrl">
+        <div>
             <div ui-view></div>
         </div>
-        <footer ng-hide="hideFooter" class="footer navbar-fixed-bottom col-xs-12">
+        <footer class="footer navbar-fixed-bottom col-xs-12" ng-hide="hideFooterHeader()">
         	<div class="footer-container">
-        		<span ng-show="kc">Do you know the Konami Code?</span>
+        		<span id="kc" ng-show="kc">Do you know the Konami Code?</span>
+        		<span>All code made by me</span>
         	</div>
         </footer>
     </div>
