@@ -1,4 +1,18 @@
 @import "variables.less";
+@import "about.less";
+
+
+/** WRAPPER ***/
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
 
 
 /*** HEADER ***/
@@ -11,6 +25,15 @@ header {
 	margin-right: 60px;
 	overflow: hidden;
 	height: 100%;
+	@media (max-width: 767px) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.site-title h1 {
+	margin-top: 10px;
+	
 }
 
 .logo-container {
@@ -18,17 +41,31 @@ header {
 }
 
 .logo {
-	height: 50px;
+	height: 60px;
 	cursor: pointer;
 
 }
 
+
+/*** MID ***/
+.mid {
+	padding: 10px;
+	padding-bottom: 120px; //height of footer
+	overflow: hidden;
+}
+
+/*** footer ***/
+
 footer {
 	background: @secondary-color;
 	bottom: 0;
-	position: absolute;
 	height: 60px;
 	color: #fff;
+	&.footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
 }
 
 .footer-container {
@@ -36,19 +73,37 @@ footer {
 	margin-right: 60px;
 	overflow: hidden;
 	height: 100%;
+	@media (max-width: 767px) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 .navigation {
+	top: 29px;
+	.nav-list {
+		float: right;
+	}
 	ul {
 		list-style-type: none;
 	    margin: 0;
 	    padding: 0;
 	}
-	li {
-		float: left;
-	}
 	a {
 		color: #fff;
+		display: block;
+  		padding: 5px 15px;
+	}
+	.nav-item {
+		background: rgba(0,0,0,.2);
+		float: left;
+		border-left: 1px solid;
+		&:last-child {
+			border-right: 1px solid;
+		}
+		&:hover {
+			background: rgba(0,0,0,.5);
+		}
 	}
 
 }
@@ -64,7 +119,21 @@ footer {
 	float: right;
 }
 
-.page {
-	margin-left: 60px;
-	margin-right: 60px;
+div.page {
+	padding-left: 60px;
+	padding-right: 60px;
+	@media (max-width: 767px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+
+
+
+/*fix bootstrap*/
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	padding: 0;
 }
