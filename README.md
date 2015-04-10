@@ -1,5 +1,5 @@
 # ee
-code for main site
+code for ericethington.com.  Uses Angular
 
 ## steps
 
