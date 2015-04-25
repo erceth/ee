@@ -7,16 +7,18 @@ var less = require('gulp-less');
 var path = require('path');
 
 //gets main files from bower and puts them into lib folder
-gulp.task("bower", function() {
+gulp.task("bower", function(callback) {
 	gulp.src(mainBowerFiles())
-		.pipe(gulp.dest("./lib"));
+		.pipe(gulp.dest("./lib"))
+		.on('end', function () { console.log("bower done"); callback(); }); //announce that you're done
 });
 
-gulp.task("concat", function() {
+gulp.task("concat", ["bower"], function() {  //wait for bower task to finish
+	console.log("concat start");
 	gulp.src(["./lib/jquery.js", "./lib/angular.js", "./lib/angular-ui-router.js", "./lib/*.js"])
 		.pipe(concat("lib.js"))
 		.pipe(gulp.dest("public/"));
-	gulp.src("./src/js/**/*.js")
+	gulp.src(["./src/js/controller/app.js", "./src/js/**/*.js"])
 		.pipe(concat("main.js"))
 		.pipe(gulp.dest("public/"));
 });
