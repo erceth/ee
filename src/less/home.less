@@ -6,7 +6,9 @@
 
 	.project {
 		padding-right: 20px;
-		height: 300px;
+		@media (min-width: 768px) {
+			height: 300px;	
+		}
 		&:last-child {
 			padding-right: 0;
 		}
