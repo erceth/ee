@@ -13,6 +13,7 @@
 
 .home .project {
   padding-right: 20px;
+  height: 300px;
 }
 .home .project:last-child {
   padding-right: 0;
