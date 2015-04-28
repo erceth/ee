@@ -15,6 +15,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: "/about",
       templateUrl: "html/about.html"
     })
+    .state('jsflags', {
+      url: "/jsflags",
+      templateUrl: "html/jsflags.html"
+    })
+    .state('webcrawler', {
+      url: "/webcrawler",
+      templateUrl: "html/webcrawler.html"
+    })
     .state('jurassicsystems', {
       url: "/jurassicsystems",
       templateUrl: "jurassicsystems/jurassicSystems.html",
