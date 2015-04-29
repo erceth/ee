@@ -2,7 +2,7 @@
 
 var app = angular.module('app', ["ui.router", "controller.home", "controller.jurassicSystems"]);
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.otherwise("/home");
 
 	$stateProvider
@@ -28,6 +28,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "jurassicsystems/jurassicSystems.html",
       controller: "jurassicSystemsCtrl"
     });
+
+    $locationProvider.html5Mode({
+	  enabled: true,
+	  requireBase: false
+	});
 
 })
 
