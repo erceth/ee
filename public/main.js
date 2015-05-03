@@ -23,6 +23,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/webcrawler",
       templateUrl: "html/webcrawler.html"
     })
+    .state('sms-tracker', {
+      url: "/sms-tracker",
+      templateUrl: "html/smsTracker.html"
+    })
     .state('jurassicsystems', {
       url: "/jurassicsystems",
       templateUrl: "jurassicsystems/jurassicSystems.html",
