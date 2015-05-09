@@ -15,6 +15,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/about",
       templateUrl: "html/about.html"
     })
+    .state('projects', {
+      url: "/projects",
+      templateUrl: "html/projects.html"
+    })
     .state('jsflags', {
       url: "/jsflags",
       templateUrl: "html/jsflags.html"
@@ -41,6 +45,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 })
 
 .controller("AppCtrl", function($scope, $http, $state, $timeout) {
+	$scope.app = {
+		showMenu: false
+	};
 
 	$scope.kc = true;
 
@@ -62,6 +69,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 		$scope.kc = false;
 	}, 3000);
 
+	$scope.app.toggleMenu = function() {
+		$scope.app.showMenu = !$scope.app.showMenu;
+		console.log("toggle!");
+	};
+
 	
 
 });
@@ -72,6 +84,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 angular.module("controller.home", [])
 
 .controller("homeCtrl", function($scope) {
+	var graduationDate = new Date("April 2013");
+	var now = new Date();
+	var internshipYear = 1;
+	var month_diff = (now.getFullYear() - graduationDate.getFullYear() + internshipYear) * 12 + now.getMonth() - graduationDate.getMonth();
+	var experienceYears = Math.floor(month_diff / 12);
+	var experienceMonths = month_diff % 12;
+	var pluarMonths = (experienceMonths === 1) ? " month" : " months";
+
+	$scope.home = {
+		timeExperience: experienceYears + " years and " + experienceMonths + pluarMonths
+	};
 	
 });
 

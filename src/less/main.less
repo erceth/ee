@@ -9,6 +9,7 @@
 	min-height: 100%;
 	position: absolute;
 	padding-bottom: 60px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAADCAYAAAC56t6BAAAAG0lEQVQIW2N89uzOfykpFUZGBgYGBhCHESYCAKNpC6uuHVROAAAAAElFTkSuQmCC) repeat;
 }
 
 html, body {
@@ -26,7 +27,6 @@ header {
 .header-container {
 	margin-left: 60px;
 	margin-right: 60px;
-	overflow: hidden;
 	height: 100%;
 	@media (max-width: 767px) {
 		margin-left: 0;
@@ -40,14 +40,28 @@ header {
 	
 }
 
-.logo-container {
-
-}
-
 .logo {
 	height: 60px;
 	cursor: pointer;
 
+}
+
+.hamburger {
+	position: absolute;
+	right: 10px;
+	top: 30px;
+}
+
+.showMobileMenu {
+	background: red;
+	position: absolute;
+	top: 60px !important;
+	right: 0;
+	z-index: 10;
+	display: block !important;
+	li {
+		width: 100%;
+	}
 }
 
 
@@ -87,7 +101,10 @@ footer {
 }
 
 .navigation {
-	top: 29px;
+	top: 30px;
+	@media (max-width: @screen-sm) {
+		display: block;
+	}
 	.nav-list {
 		float: right;
 	}
@@ -100,6 +117,7 @@ footer {
 		color: #fff;
 		display: block;
   		padding: 5px 15px;
+  		text-transform: capitalize;
 	}
 	.nav-item {
 		background: rgba(0,0,0,.2);

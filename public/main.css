@@ -1,4 +1,5 @@
 /* from bootstrap */
+/* hom page blobs */
 .home .project {
   padding-right: 20px;
 }
@@ -12,10 +13,13 @@
 }
 .home .splash {
   background: #666666;
+  border: 1px solid;
+  border-top: 0;
 }
 .home .splash .item {
   max-width: 1000px;
   margin: auto;
+  height: 300px;
 }
 @media (min-width: 480px) {
   .home .splash .item {
@@ -37,15 +41,37 @@
     height: 600px;
   }
 }
-.profile-picture {
-  float: right;
-  margin-left: 30px;
+.home .blobs {
+  padding: 10px 0;
 }
-.profile-picture img {
-  width: 400px;
+.home .blobs .blob-container {
+  padding: 0 3.33333333px 0;
 }
-@media (max-width: 767px) {
-  .profile-picture img {
+.home .blobs .blob-container:first-child {
+  padding-left: 0;
+  padding-right: 6.66666667px;
+}
+.home .blobs .blob-container:last-child {
+  padding-left: 6.66666667px;
+  padding-right: 0;
+}
+.home .blobs .blob-container .blob {
+  border: 1px solid black;
+  padding: 10px;
+  background: #fff;
+  height: 170px;
+}
+.home .blobs .blob-container h3 {
+  margin: 0 0 10px 0;
+}
+.about .description {
+  background: #fff;
+}
+.about .profile-picture img {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .about .profile-picture img {
     width: 200px;
   }
 }
@@ -57,6 +83,7 @@
   min-height: 100%;
   position: absolute;
   padding-bottom: 60px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAADCAYAAAC56t6BAAAAG0lEQVQIW2N89uzOfykpFUZGBgYGBhCHESYCAKNpC6uuHVROAAAAAElFTkSuQmCC) repeat;
 }
 html,
 body {
@@ -72,7 +99,6 @@ header {
 .header-container {
   margin-left: 60px;
   margin-right: 60px;
-  overflow: hidden;
   height: 100%;
 }
 @media (max-width: 767px) {
@@ -88,6 +114,22 @@ header {
 .logo {
   height: 60px;
   cursor: pointer;
+}
+.hamburger {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+}
+.showMobileMenu {
+  background: red;
+  position: absolute;
+  top: 60px !important;
+  right: 0;
+  z-index: 10;
+  display: block !important;
+}
+.showMobileMenu li {
+  width: 100%;
 }
 /*** MID ***/
 .mid {
@@ -125,7 +167,12 @@ footer.footer {
   }
 }
 .navigation {
-  top: 29px;
+  top: 30px;
+}
+@media (max-width: 768px) {
+  .navigation {
+    display: block;
+  }
 }
 .navigation .nav-list {
   float: right;
@@ -139,6 +186,7 @@ footer.footer {
   color: #fff;
   display: block;
   padding: 5px 15px;
+  text-transform: capitalize;
 }
 .navigation .nav-item {
   background: rgba(0, 0, 0, 0.2);

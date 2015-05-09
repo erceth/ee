@@ -15,6 +15,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/about",
       templateUrl: "html/about.html"
     })
+    .state('projects', {
+      url: "/projects",
+      templateUrl: "html/projects.html"
+    })
     .state('jsflags', {
       url: "/jsflags",
       templateUrl: "html/jsflags.html"
@@ -41,6 +45,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 })
 
 .controller("AppCtrl", function($scope, $http, $state, $timeout) {
+	$scope.app = {
+		showMenu: false
+	};
 
 	$scope.kc = true;
 
@@ -61,6 +68,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 	$timeout(function() {
 		$scope.kc = false;
 	}, 3000);
+
+	$scope.app.toggleMenu = function() {
+		$scope.app.showMenu = !$scope.app.showMenu;
+		console.log("toggle!");
+	};
 
 	
 
