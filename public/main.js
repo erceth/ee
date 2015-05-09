@@ -68,15 +68,3 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
 
 
-
-angular.module("controller.home", [])
-
-.controller("homeCtrl", function($scope) {
-	
-});
-
-angular.module("controller.jurassicSystems", [])
-
-.controller("jurassicSystemsCtrl", function($scope, $rootScope) {
-
-});
