@@ -44,16 +44,18 @@
 .home .blobs {
   padding: 10px 0;
 }
-.home .blobs .blob-container {
-  padding: 0 3.33333333px 0;
-}
-.home .blobs .blob-container:first-child {
-  padding-left: 0;
-  padding-right: 6.66666667px;
-}
-.home .blobs .blob-container:last-child {
-  padding-left: 6.66666667px;
-  padding-right: 0;
+@media (min-width: 992px) {
+  .home .blobs .blob-container {
+    padding: 0 3.33333333px 0;
+  }
+  .home .blobs .blob-container:first-child {
+    padding-left: 0;
+    padding-right: 6.66666667px;
+  }
+  .home .blobs .blob-container:last-child {
+    padding-left: 6.66666667px;
+    padding-right: 0;
+  }
 }
 .home .blobs .blob-container .blob {
   border: 1px solid black;
@@ -119,17 +121,57 @@ header {
   position: absolute;
   right: 10px;
   top: 30px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+.navigation {
+  top: 30px;
+  display: block;
+}
+.navigation .nav-list {
+  float: right;
+}
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation a {
+  color: #fff;
+  display: block;
+  padding: 5px 15px;
+  text-transform: capitalize;
+}
+.navigation .nav-item {
+  background: rgba(0, 0, 0, 0.2);
+  float: left;
+  border-left: 1px solid;
+}
+.navigation .nav-item:last-child {
+  border-right: 1px solid;
+}
+.navigation .nav-item:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+    background: red;
+    position: absolute;
+    top: 60px !important;
+    right: 0;
+    z-index: 10;
+  }
+  .navigation li {
+    width: 100%;
+  }
 }
 .showMobileMenu {
-  background: red;
-  position: absolute;
-  top: 60px !important;
-  right: 0;
-  z-index: 10;
-  display: block !important;
-}
-.showMobileMenu li {
-  width: 100%;
+  display: block;
 }
 /*** MID ***/
 .mid {
@@ -165,39 +207,6 @@ footer.footer {
     margin-left: 0;
     margin-right: 0;
   }
-}
-.navigation {
-  top: 30px;
-}
-@media (max-width: 768px) {
-  .navigation {
-    display: block;
-  }
-}
-.navigation .nav-list {
-  float: right;
-}
-.navigation ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.navigation a {
-  color: #fff;
-  display: block;
-  padding: 5px 15px;
-  text-transform: capitalize;
-}
-.navigation .nav-item {
-  background: rgba(0, 0, 0, 0.2);
-  float: left;
-  border-left: 1px solid;
-}
-.navigation .nav-item:last-child {
-  border-right: 1px solid;
-}
-.navigation .nav-item:hover {
-  background: rgba(0, 0, 0, 0.5);
 }
 .no-padding {
   padding: 0 !important;

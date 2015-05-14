@@ -41,15 +41,19 @@
 	.blobs {
 		padding: @blob-spacing 0;
 		.blob-container {
-			padding: 0 @blob-spacing-one-thirds 0;
-			&:first-child {
-				padding-left: 0;
-				padding-right: @blob-spacing-two-thirds;
+			@media (min-width: @screen-md) {
+				padding: 0 @blob-spacing-one-thirds 0;
+				&:first-child {
+					padding-left: 0;
+					padding-right: @blob-spacing-two-thirds;
+				}
+				&:last-child {
+					padding-left: @blob-spacing-two-thirds;
+					padding-right: 0;
+				}
+
 			}
-			&:last-child {
-				padding-left: @blob-spacing-two-thirds;
-				padding-right: 0;
-			}
+			
 
 			.blob {
 				border: 1px solid black;
